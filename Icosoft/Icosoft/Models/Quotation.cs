@@ -19,6 +19,8 @@ namespace Icosoft.Models
         public double TotalLabor { get; set; }
         public double CustomerValue { get; set; }
         public double TotalProduction { get; set; }
+
+        public ICollection<Detail> Details { get; set; }
     }
 
     public class Detail
@@ -35,7 +37,7 @@ namespace Icosoft.Models
         public string DescriptionAdmin { get; set; }
         public string DescriptionUser { get; set; }
 
-        public ICollection<DetailImageQuotation> DetailImageQuotations { get; set; }
+        public ICollection<DetailImageQuotation> DetailImageQuotation { get; set; }
     }
 
     public class ImagenQuotation
