@@ -35,7 +35,7 @@ namespace Icosoft.Models
         public string DescriptionAdmin { get; set; }
         public string DescriptionUser { get; set; }
 
-        public ICollection<DetailImageQuotation> DetailImageQuotation { get; set; }
+        public ICollection<DetailImageQuotation> DetailImageQuotations { get; set; }
     }
 
     public class ImagenQuotation
@@ -44,7 +44,7 @@ namespace Icosoft.Models
         public int idImagenQuotation { get; set; }
 
         public string ImagenQuotations { get; set; }
-        public ICollection<DetailImageQuotation> DetailImageQuotation { get; set; }
+        public ICollection<DetailImageQuotation> DetailImageQuotations { get; set; }
 
     }
 
@@ -55,7 +55,7 @@ namespace Icosoft.Models
 
         public int idImagenQuotation { get; set; }
         public int idDetail { get; set; }
-        public Detail Detail { get; set; }
+        public Detail Details { get; set; }
         public ImagenQuotation ImagenQuotations { get; set; }
     }
 }
