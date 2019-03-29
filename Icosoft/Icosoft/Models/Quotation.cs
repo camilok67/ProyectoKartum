@@ -54,6 +54,7 @@ namespace Icosoft.Models
         public string DescriptionUser { get; set; }
 
         public ICollection<DetailImageQuotation> DetailImageQuotation { get; set; }
+        public ICollection<SupplieQuotation> SupplieQuotations { get; set; }
     }
 
     public class ImagenQuotation
