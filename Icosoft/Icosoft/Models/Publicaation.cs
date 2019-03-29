@@ -6,12 +6,11 @@ using System.Web;
 
 namespace Icosoft.Models
 {
-
     public class TypePublication
     {
         [Key]
         public int idTypePublication { get; set; }
-        public string TypePublication { get; set; }
+        public string TypePublications { get; set; }
         public ICollection<Publication> idPublications { get; set; }
 
     }
@@ -19,6 +18,7 @@ namespace Icosoft.Models
     {
         [Key]
         public int idPublication { get; set; }
+
         public int PublicationName { get; set; }
         public string Description { get; set; }
         public decimal Cost { get; set; }
@@ -53,8 +53,4 @@ namespace Icosoft.Models
         public TypePublication Publications { get; set; }
         public PublicationImage PublicationImages { get; set; }
     }
-
-
-
-
 }
