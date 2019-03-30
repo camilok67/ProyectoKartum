@@ -22,6 +22,7 @@ namespace Icosoft.Models
         public string SupplieName { get; set; }
         public int idSuplier { get; set; }
         public Supplier Supplier { get; set; }
+        
         public ICollection<SupplieQuotation> SupplieQuotations { get; set; }
 
     }
