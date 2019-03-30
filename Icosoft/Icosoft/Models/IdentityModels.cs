@@ -10,12 +10,17 @@ namespace Icosoft.Models
     // Para agregar datos de perfil del usuario, agregue más propiedades a su clase ApplicationUser. Visite https://go.microsoft.com/fwlink/?LinkID=317594 para obtener más información.
     public class ApplicationUser : IdentityUser
     {
+
+        
+
         [StringLength(40)]
         public string Name { get; set; }
         [StringLength(13)]
         public string Document { get; set; }
         [StringLength(45)]
         public string Direction { get; set; }
+
+        
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             

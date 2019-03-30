@@ -20,5 +20,6 @@ namespace Icosoft.Models
         public int IDDocumentType { get; set; }
         [StringLength(25)]
         public string DocumentTypeName { get; set; }
+        //public virtual ICollection<RegisterViewModel> ApplicationUsers { get; set; }
     }
 }

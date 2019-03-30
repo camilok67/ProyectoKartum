@@ -139,6 +139,8 @@ namespace Icosoft.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            var db = new IcosoftContext();
+            ViewBag.idDocumentType = new SelectList(db.DocumentTypes, "IDDocumentType", "DocumentTypeName");
             return View();
         }
 

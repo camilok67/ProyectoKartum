@@ -10,6 +10,7 @@ namespace Icosoft.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Icosoft.Models.IcosoftContext";
             AutomaticMigrationDataLossAllowed = true;
         }
