@@ -187,10 +187,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DocumentTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\UserTypesController.cs" />
+    <Compile Include="Controllers\PublicationsController.cs" />
+    <Compile Include="Controllers\SuppliesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,11 +277,16 @@
     <Content Include="Views\UserTypes\Details.cshtml" />
     <Content Include="Views\UserTypes\Edit.cshtml" />
     <Content Include="Views\UserTypes\Index.cshtml" />
-    <Content Include="Views\DocumentTypes\Create.cshtml" />
-    <Content Include="Views\DocumentTypes\Delete.cshtml" />
-    <Content Include="Views\DocumentTypes\Details.cshtml" />
-    <Content Include="Views\DocumentTypes\Edit.cshtml" />
-    <Content Include="Views\DocumentTypes\Index.cshtml" />
+    <Content Include="Views\Supplies\Create.cshtml" />
+    <Content Include="Views\Supplies\Delete.cshtml" />
+    <Content Include="Views\Supplies\Details.cshtml" />
+    <Content Include="Views\Supplies\Edit.cshtml" />
+    <Content Include="Views\Supplies\Index.cshtml" />
+    <Content Include="Views\Publications\Create.cshtml" />
+    <Content Include="Views\Publications\Delete.cshtml" />
+    <Content Include="Views\Publications\Details.cshtml" />
+    <Content Include="Views\Publications\Edit.cshtml" />
+    <Content Include="Views\Publications\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

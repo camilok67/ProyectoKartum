@@ -10,107 +10,107 @@ using Icosoft.Models;
 
 namespace Icosoft.Controllers
 {
-    public class DocumentTypesController : Controller
+    public class PublicationsController : Controller
     {
         private IcosoftContext db = new IcosoftContext();
 
-        // GET: DocumentTypes
+        // GET: Publications
         public ActionResult Index()
         {
-            return View(db.DocumentTypes.ToList());
+            return View(db.Publications.ToList());
         }
 
-        // GET: DocumentTypes/Details/5
+        // GET: Publications/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DocumentType documentType = db.DocumentTypes.Find(id);
-            if (documentType == null)
+            Publication publication = db.Publications.Find(id);
+            if (publication == null)
             {
                 return HttpNotFound();
             }
-            return View(documentType);
+            return View(publication);
         }
 
-        // GET: DocumentTypes/Create
+        // GET: Publications/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: DocumentTypes/Create
+        // POST: Publications/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDDocumentType,DocumentTypeName")] DocumentType documentType)
+        public ActionResult Create([Bind(Include = "idPublication,PublicationName,Cost,PublicationDate,State,Height,Width,Depth")] Publication publication)
         {
             if (ModelState.IsValid)
             {
-                db.DocumentTypes.Add(documentType);
+                db.Publications.Add(publication);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(documentType);
+            return View(publication);
         }
 
-        // GET: DocumentTypes/Edit/5
+        // GET: Publications/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DocumentType documentType = db.DocumentTypes.Find(id);
-            if (documentType == null)
+            Publication publication = db.Publications.Find(id);
+            if (publication == null)
             {
                 return HttpNotFound();
             }
-            return View(documentType);
+            return View(publication);
         }
 
-        // POST: DocumentTypes/Edit/5
+        // POST: Publications/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDDocumentType,DocumentTypeName")] DocumentType documentType)
+        public ActionResult Edit([Bind(Include = "idPublication,PublicationName,Cost,PublicationDate,State,Height,Width,Depth")] Publication publication)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(documentType).State = EntityState.Modified;
+                db.Entry(publication).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(documentType);
+            return View(publication);
         }
 
-        // GET: DocumentTypes/Delete/5
+        // GET: Publications/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DocumentType documentType = db.DocumentTypes.Find(id);
-            if (documentType == null)
+            Publication publication = db.Publications.Find(id);
+            if (publication == null)
             {
                 return HttpNotFound();
             }
-            return View(documentType);
+            return View(publication);
         }
 
-        // POST: DocumentTypes/Delete/5
+        // POST: Publications/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DocumentType documentType = db.DocumentTypes.Find(id);
-            db.DocumentTypes.Remove(documentType);
+            Publication publication = db.Publications.Find(id);
+            db.Publications.Remove(publication);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

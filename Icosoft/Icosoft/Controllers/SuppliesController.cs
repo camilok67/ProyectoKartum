@@ -10,107 +10,112 @@ using Icosoft.Models;
 
 namespace Icosoft.Controllers
 {
-    public class UserTypesController : Controller
+    public class SuppliesController : Controller
     {
         private IcosoftContext db = new IcosoftContext();
 
-        // GET: UserTypes
+        // GET: Supplies
         public ActionResult Index()
         {
-            return View(db.UserTypes.ToList());
+            var supplies = db.Supplies.Include(s => s.Supplier);
+            return View(supplies.ToList());
         }
 
-        // GET: UserTypes/Details/5
+        // GET: Supplies/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserType userType = db.UserTypes.Find(id);
-            if (userType == null)
+            Supplie supplie = db.Supplies.Find(id);
+            if (supplie == null)
             {
                 return HttpNotFound();
             }
-            return View(userType);
+            return View(supplie);
         }
 
-        // GET: UserTypes/Create
+        // GET: Supplies/Create
         public ActionResult Create()
         {
+            ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName");
             return View();
         }
 
-        // POST: UserTypes/Create
+        // POST: Supplies/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDUserType,UserTypeName")] UserType userType)
+        public ActionResult Create([Bind(Include = "idSupplie,SupplieName,idSuplier")] Supplie supplie)
         {
             if (ModelState.IsValid)
             {
-                db.UserTypes.Add(userType);
+                db.Supplies.Add(supplie);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(userType);
+            ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName", supplie.idSuplier);
+            return View(supplie);
         }
 
-        // GET: UserTypes/Edit/5
+        // GET: Supplies/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserType userType = db.UserTypes.Find(id);
-            if (userType == null)
+            Supplie supplie = db.Supplies.Find(id);
+            if (supplie == null)
             {
                 return HttpNotFound();
             }
-            return View(userType);
+            ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName", supplie.idSuplier);
+            return View(supplie);
         }
 
-        // POST: UserTypes/Edit/5
+        // POST: Supplies/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDUserType,UserTypeName")] UserType userType)
+        public ActionResult Edit([Bind(Include = "idSupplie,SupplieName,idSuplier")] Supplie supplie)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(userType).State = EntityState.Modified;
+                db.Entry(supplie).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(userType);
+            ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName", supplie.idSuplier);
+            return View(supplie);
         }
 
-        // GET: UserTypes/Delete/5
+        // GET: Supplies/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserType userType = db.UserTypes.Find(id);
-            if (userType == null)
+            Supplie supplie = db.Supplies.Find(id);
+            if (supplie == null)
             {
                 return HttpNotFound();
             }
-            return View(userType);
+            return View(supplie);
         }
 
-        // POST: UserTypes/Delete/5
+        // POST: Supplies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            UserType userType = db.UserTypes.Find(id);
-            db.UserTypes.Remove(userType);
+            Supplie supplie = db.Supplies.Find(id);
+            db.Supplies.Remove(supplie);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
