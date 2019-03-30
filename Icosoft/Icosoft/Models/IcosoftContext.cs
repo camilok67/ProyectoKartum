@@ -6,7 +6,9 @@ using System.Web;
 
 namespace Icosoft.Models
 {
-    public class IcosoftContext : DbContext
+    public class IcosoftContext
+    {
+         public class IcosoftContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten
         // 

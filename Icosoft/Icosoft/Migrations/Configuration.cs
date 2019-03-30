@@ -9,8 +9,9 @@ namespace Icosoft.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "Icosoft.Models.ApplicationDbContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Icosoft.Models.ApplicationDbContext context)

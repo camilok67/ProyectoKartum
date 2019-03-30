@@ -7,17 +7,7 @@ using System.Web;
 namespace Icosoft.Models
 {
     // tabla tipos de publicaciones
-    public class TypePublication
-    {
-        [Key]
-        [Display(Name = "Tipo de Publicacion")]
-        public int idTypePublication { get; set; }
-
-        //Relacion entre Tipo. Publicacion y publicaciones
-        public string TypePublications { get; set; }
-        public ICollection<Publication> idPublications { get; set; }
-
-    }
+   
 
     //tabla publicaciones
     public class Publication
@@ -54,6 +44,18 @@ namespace Icosoft.Models
 
         //Relacion entre intermedia Tipo. Medidas y publicaciones
         public virtual MediMeasurementsPublication MediMeasurementsPublications { get; set; }
+    }
+
+    public class TypePublication
+    {
+        [Key]
+        [Display(Name = "Tipo de Publicacion")]
+        public int idTypePublication { get; set; }
+
+        //Relacion entre Tipo. Publicacion y publicaciones
+        public string TypePublications { get; set; }
+        public ICollection<Publication> idPublications { get; set; }
+
     }
 
     public class Measure
