@@ -21,7 +21,8 @@ namespace Icosoft
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           // Database.SetInitializer(new MigrateDatabaseToLatestVersion<Models.IcosoftContext, Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Models.IcosoftContext,
+                Migrations.Configuration>());
         }
     }
 }

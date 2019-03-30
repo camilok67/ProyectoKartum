@@ -190,17 +190,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PublicationsController.cs" />
+    <Compile Include="Controllers\QuotationsController.cs" />
     <Compile Include="Controllers\SuppliesController.cs" />
+    <Compile Include="Controllers\UserTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903300001540_InitialCreate.cs" />
-    <Compile Include="Migrations\201903300001540_InitialCreate.Designer.cs">
-      <DependentUpon>201903300001540_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903300033039_AddCampoPerfil.cs" />
-    <Compile Include="Migrations\201903300033039_AddCampoPerfil.Designer.cs">
-      <DependentUpon>201903300033039_AddCampoPerfil.cs</DependentUpon>
+    <Compile Include="Migrations\201903300354029_AddRemaksField.cs" />
+    <Compile Include="Migrations\201903300354029_AddRemaksField.Designer.cs">
+      <DependentUpon>201903300354029_AddRemaksField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,11 +270,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\UserTypes\Create.cshtml" />
-    <Content Include="Views\UserTypes\Delete.cshtml" />
-    <Content Include="Views\UserTypes\Details.cshtml" />
-    <Content Include="Views\UserTypes\Edit.cshtml" />
-    <Content Include="Views\UserTypes\Index.cshtml" />
     <Content Include="Views\Supplies\Create.cshtml" />
     <Content Include="Views\Supplies\Delete.cshtml" />
     <Content Include="Views\Supplies\Details.cshtml" />
@@ -287,6 +280,16 @@
     <Content Include="Views\Publications\Details.cshtml" />
     <Content Include="Views\Publications\Edit.cshtml" />
     <Content Include="Views\Publications\Index.cshtml" />
+    <Content Include="Views\UserTypes\Create.cshtml" />
+    <Content Include="Views\UserTypes\Delete.cshtml" />
+    <Content Include="Views\UserTypes\Details.cshtml" />
+    <Content Include="Views\UserTypes\Edit.cshtml" />
+    <Content Include="Views\UserTypes\Index.cshtml" />
+    <Content Include="Views\Quotations\Create.cshtml" />
+    <Content Include="Views\Quotations\Delete.cshtml" />
+    <Content Include="Views\Quotations\Details.cshtml" />
+    <Content Include="Views\Quotations\Edit.cshtml" />
+    <Content Include="Views\Quotations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,11 +308,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903300001540_InitialCreate.resx">
-      <DependentUpon>201903300001540_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903300033039_AddCampoPerfil.resx">
-      <DependentUpon>201903300033039_AddCampoPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903300354029_AddRemaksField.resx">
+      <DependentUpon>201903300354029_AddRemaksField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

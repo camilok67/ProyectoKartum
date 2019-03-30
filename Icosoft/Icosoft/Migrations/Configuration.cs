@@ -5,16 +5,16 @@ namespace Icosoft.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Icosoft.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Icosoft.Models.IcosoftContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "Icosoft.Models.ApplicationDbContext";
+            ContextKey = "Icosoft.Models.IcosoftContext";
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Icosoft.Models.ApplicationDbContext context)
+        protected override void Seed(Icosoft.Models.IcosoftContext context)
         {
             //  This method will be called after migrating to the latest version.
 
