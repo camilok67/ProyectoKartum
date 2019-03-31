@@ -36,11 +36,13 @@ namespace Icosoft.Models
         [Display(Name = "Profundidad")]
         public double Depth { get; set; }
 
+        public virtual ICollection<PublicationImage> PublicationImages2 { get; set; }
+
         //Relacion entre Tipo. Publicacion y publicaciones
         public virtual TypePublication TypePublications { get; set; }
 
         //Relacion entre imagenes y publicaciones
-        public virtual PublicationImage PublicationImages { get; set; }
+        
 
         //Relacion entre intermedia Tipo. Medidas y publicaciones
         public virtual MediMeasurementsPublication MediMeasurementsPublications { get; set; }
@@ -80,17 +82,7 @@ namespace Icosoft.Models
     }
 
 
-    public class ImagePublication
-    {
-        [Key]
-        public int idImage { get; set; }
 
-        [Display(Name = "Imagen")]
-        public string Image { get; set; }
-
-        //Relacion entre imagnes y publicaciones
-        public virtual PublicationImage PublicationImages { get; set; }
-    }
 
 
     //Tabla entre intermedia imagenes  y publicaciones
@@ -99,13 +91,14 @@ namespace Icosoft.Models
         [Key]
         public int idPublicationImage { get; set; }
 
-        public int idImage { get; set; }
-
+        public int IDImage { get; set; }
+        public virtual Image Image { get; set; }
         public int idPublication { get; set; }
+        public virtual Publication Publication { get; set; }
 
-        public ICollection<Publication> Publications { get; set; }
 
-        public ICollection<PublicationImage> PublicationImages { get; set; }
+
+
     }
 
 
@@ -124,5 +117,13 @@ namespace Icosoft.Models
 
         public ICollection<Measure> Measures { get; set; }
 
+    }
+
+    public class Image
+    {
+        [Key]
+        public int IDImage { get; set; }
+        public string Imagen { get; set; }
+        public virtual ICollection<PublicationImage> PublicationImages { get; set; }
     }
 }
