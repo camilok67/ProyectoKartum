@@ -17,7 +17,7 @@ namespace Icosoft.Controllers
         // GET: Supplies
         public ActionResult Index()
         {
-            var supplies = db.Supplies.Include(s => s.Supplier);
+            var supplies = db.Supplies.Include(s => s.MedidaTipo).Include(s => s.Supplier);
             return View(supplies.ToList());
         }
 
@@ -39,6 +39,7 @@ namespace Icosoft.Controllers
         // GET: Supplies/Create
         public ActionResult Create()
         {
+            ViewBag.IDMEDIDATIPO = new SelectList(db.MedidaTipoes, "IDMEDIDATIPO", "Nombre");
             ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName");
             return View();
         }
@@ -48,7 +49,7 @@ namespace Icosoft.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idSupplie,SupplieName,idSuplier")] Supplie supplie)
+        public ActionResult Create([Bind(Include = "idSupplie,SupplieName,idSuplier,IDMEDIDATIPO")] Supplie supplie)
         {
             if (ModelState.IsValid)
             {
@@ -57,6 +58,7 @@ namespace Icosoft.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.IDMEDIDATIPO = new SelectList(db.MedidaTipoes, "IDMEDIDATIPO", "Nombre", supplie.IDMEDIDATIPO);
             ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName", supplie.idSuplier);
             return View(supplie);
         }
@@ -73,6 +75,7 @@ namespace Icosoft.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IDMEDIDATIPO = new SelectList(db.MedidaTipoes, "IDMEDIDATIPO", "Nombre", supplie.IDMEDIDATIPO);
             ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName", supplie.idSuplier);
             return View(supplie);
         }
@@ -82,7 +85,7 @@ namespace Icosoft.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idSupplie,SupplieName,idSuplier")] Supplie supplie)
+        public ActionResult Edit([Bind(Include = "idSupplie,SupplieName,idSuplier,IDMEDIDATIPO")] Supplie supplie)
         {
             if (ModelState.IsValid)
             {
@@ -90,6 +93,7 @@ namespace Icosoft.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.IDMEDIDATIPO = new SelectList(db.MedidaTipoes, "IDMEDIDATIPO", "Nombre", supplie.IDMEDIDATIPO);
             ViewBag.idSuplier = new SelectList(db.Suppliers, "idSuplier", "SuplierName", supplie.idSuplier);
             return View(supplie);
         }
@@ -118,6 +122,26 @@ namespace Icosoft.Controllers
             db.Supplies.Remove(supplie);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Filtrar(string insumo, string proveedor)
+        {
+            var supplies = db.Supplies.Include(s => s.Supplier).Include(s=> s.MedidaTipo);
+            if (!String.IsNullOrEmpty(insumo))
+            {
+                var insumoBusqueda = db.Supplies.Where(j => j.SupplieName.Contains(insumo)).Include(s => s.Supplier).Include(s => s.MedidaTipo);
+                return View(insumoBusqueda);
+
+            }
+
+            else if (!String.IsNullOrEmpty(proveedor))
+            {
+                var insumoBusqueda = db.Supplies.Where(j => j.Supplier.SuplierName.Contains(proveedor)).Include(s => s.Supplier).Include(s => s.MedidaTipo);
+                return View(insumoBusqueda);
+
+            }
+
+            return View(supplies);
         }
 
         protected override void Dispose(bool disposing)

@@ -91,6 +91,11 @@ namespace Icosoft.Models
         public string ConfirmPassword { get; set; }
         public int IDDocumentType { get; set; }
         public virtual DocumentType DocumentType { get; set; }
+
+        public int IDUserType { get; set; }
+        public virtual UserType UserType { get; set; }
+        public int IdCity { get; set; }
+        public virtual City City { get; set; }
     }
 
     public class ResetPasswordViewModel

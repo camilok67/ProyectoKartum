@@ -191,8 +191,10 @@
     <Compile Include="Controllers\DocumentTypes1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MedidaTipoes1Controller.cs" />
     <Compile Include="Controllers\PublicationsController.cs" />
     <Compile Include="Controllers\QuotationsController.cs" />
+    <Compile Include="Controllers\Suppliers1Controller.cs" />
     <Compile Include="Controllers\SuppliesController.cs" />
     <Compile Include="Controllers\UserTypesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +206,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Departmetn.cs" />
     <Compile Include="Models\IcosoftContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -302,6 +305,16 @@
     <Content Include="Views\Publications\Details.cshtml" />
     <Content Include="Views\Publications\Edit.cshtml" />
     <Content Include="Views\Publications\Index.cshtml" />
+    <Content Include="Views\Suppliers1\Create.cshtml" />
+    <Content Include="Views\Suppliers1\Delete.cshtml" />
+    <Content Include="Views\Suppliers1\Details.cshtml" />
+    <Content Include="Views\Suppliers1\Edit.cshtml" />
+    <Content Include="Views\Suppliers1\Index.cshtml" />
+    <Content Include="Views\MedidaTipoes1\Create.cshtml" />
+    <Content Include="Views\MedidaTipoes1\Delete.cshtml" />
+    <Content Include="Views\MedidaTipoes1\Details.cshtml" />
+    <Content Include="Views\MedidaTipoes1\Edit.cshtml" />
+    <Content Include="Views\MedidaTipoes1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

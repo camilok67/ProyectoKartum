@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Icosoft.Models.Supplie>
+
+@{
+    ViewBag.Title = "Filtrar";
+}
+
+<h2>Filtrar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <p> Busqueda por insumo: @Html.TextBox("insumo", null, htmlAttributes: new { @class = "form-control" })</p>
+    <p> Busqueda por proveedor: @Html.TextBox("proveedor", null, htmlAttributes: new { @class = "form-control" })</p><br>
+    <input type="submit" name="name" value="Buscar" class="btn btn-default" />
+}
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MedidaTipo.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier.SuplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplieName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedidaTipo.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.SuplierName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplieName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idSupplie }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.idSupplie }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idSupplie })
+                </td>
+            </tr>
+        }
+
+    </table>

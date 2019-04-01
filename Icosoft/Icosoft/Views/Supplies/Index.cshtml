@@ -7,15 +7,20 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Registrar Insumo", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+    @Html.ActionLink("Busqueda Avanzada", "Filtrar", null, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Supplier.SuplierName)
+            @Html.DisplayNameFor(model => model.SupplieName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MedidaTipo.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SupplieName)
+            @Html.DisplayNameFor(model => model.Supplier.SuplierName)
         </th>
         <th></th>
     </tr>
@@ -23,15 +28,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Supplier.SuplierName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.SupplieName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idSupplie }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idSupplie }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idSupplie })
+            @Html.DisplayFor(modelItem => item.MedidaTipo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Supplier.SuplierName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.idSupplie }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idSupplie }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idSupplie })
         </td>
     </tr>
 }

@@ -32,5 +32,9 @@ namespace Icosoft.Models
         public System.Data.Entity.DbSet<Icosoft.Models.DocumentType> DocumentTypes { get; set; }
 
         public System.Data.Entity.DbSet<Icosoft.Models.Detail> Details { get; set; }
+
+        public System.Data.Entity.DbSet<Icosoft.Models.MedidaTipo> MedidaTipoes { get; set; }
+
+        public System.Data.Entity.DbSet<Icosoft.Models.City> Cities { get; set; }
     }
 }

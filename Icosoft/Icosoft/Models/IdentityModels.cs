@@ -19,8 +19,13 @@ namespace Icosoft.Models
         public string Document { get; set; }
         [StringLength(45)]
         public string Direction { get; set; }
+        public int IDDocumentType { get; set; }
+        public virtual DocumentType DocumentType { get; set; }
+        public int IDUserType { get; set; }
+        public virtual UserType UserType { get; set; }
+        public int IdCity { get; set; }
+        public virtual City City { get; set; }
 
-        
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             
