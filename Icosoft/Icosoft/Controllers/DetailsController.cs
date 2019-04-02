@@ -46,7 +46,7 @@ namespace Icosoft.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idDetail,Height,Width,Depth,MeasureHeight,MeasureWidth,DepthMeasurement,DescriptionAdmin,DescriptionUser")] Detail detail)
+        public ActionResult Create([Bind(Include = "idDetail,Height,Width,Depth,Image,DescriptionAdmin,DescriptionUser")] Detail detail)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Icosoft.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idDetail,Height,Width,Depth,MeasureHeight,MeasureWidth,DepthMeasurement,DescriptionAdmin,DescriptionUser")] Detail detail)
+        public ActionResult Edit([Bind(Include = "idDetail,Height,Width,Depth,Image,DescriptionAdmin,DescriptionUser")] Detail detail)
         {
             if (ModelState.IsValid)
             {

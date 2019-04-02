@@ -207,6 +207,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Departmetn.cs" />
+    <Compile Include="Models\DetailViews.cs" />
     <Compile Include="Models\IcosoftContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -295,11 +296,6 @@
     <Content Include="Views\DocumentTypes1\Details.cshtml" />
     <Content Include="Views\DocumentTypes1\Edit.cshtml" />
     <Content Include="Views\DocumentTypes1\Index.cshtml" />
-    <Content Include="Views\Details\Create.cshtml" />
-    <Content Include="Views\Details\Delete.cshtml" />
-    <Content Include="Views\Details\Details.cshtml" />
-    <Content Include="Views\Details\Edit.cshtml" />
-    <Content Include="Views\Details\Index.cshtml" />
     <Content Include="Views\Publications\Create.cshtml" />
     <Content Include="Views\Publications\Delete.cshtml" />
     <Content Include="Views\Publications\Details.cshtml" />
@@ -315,9 +311,15 @@
     <Content Include="Views\MedidaTipoes1\Details.cshtml" />
     <Content Include="Views\MedidaTipoes1\Edit.cshtml" />
     <Content Include="Views\MedidaTipoes1\Index.cshtml" />
+    <Content Include="Views\Details\Create.cshtml" />
+    <Content Include="Views\Details\Delete.cshtml" />
+    <Content Include="Views\Details\Details.cshtml" />
+    <Content Include="Views\Details\Edit.cshtml" />
+    <Content Include="Views\Details\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

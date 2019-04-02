@@ -84,21 +84,23 @@ namespace Icosoft.Models
         [Required(ErrorMessage = "Debe Ingresar la {0}")]
         public double Depth { get; set; }
 
-        [Display(Name = "Medida Altura")]
-        [Required(ErrorMessage = "Debe Seleccionar la {0}")]
-        [StringLength(15, ErrorMessage = "El {0} debe tener {1} a {2}", MinimumLength = 5)]
-        public string MeasureHeight { get; set; }
+        //[Display(Name = "Medida Altura")]
+        //[Required(ErrorMessage = "Debe Seleccionar la {0}")]
+        //[StringLength(15, ErrorMessage = "El {0} debe tener {1} a {2}", MinimumLength = 5)]
+        //public string MeasureHeight { get; set; }
 
-        [Display(Name = "Medida Ancho")]
-        [Required(ErrorMessage = "Debe Seleccionar la {0}")]
-        [StringLength(15, ErrorMessage = "El {0} debe tener {1} a {2}", MinimumLength = 5)]
-        public string MeasureWidth { get; set; }
+        //[Display(Name = "Medida Ancho")]
+        //[Required(ErrorMessage = "Debe Seleccionar la {0}")]
+        //[StringLength(15, ErrorMessage = "El {0} debe tener {1} a {2}", MinimumLength = 5)]
+        //public string MeasureWidth { get; set; }
 
-        [Display(Name = "Medida Profundidad")]
-        [Required(ErrorMessage = "Debe Seleccionar la {0}")]
-        [StringLength(15, ErrorMessage = "El {0} debe tener {1} a {2}", MinimumLength = 5)]
-        public string DepthMeasurement { get; set; }
+        //[Display(Name = "Medida Profundidad")]
+        //[Required(ErrorMessage = "Debe Seleccionar la {0}")]
+        //[StringLength(15, ErrorMessage = "El {0} debe tener {1} a {2}", MinimumLength = 5)]
+        //public string DepthMeasurement { get; set; }
 
+
+        public string Image { get; set; }
 
         [Display(Name = "Descripción admin")]
         [Required(ErrorMessage = "Debe Ingresar la {0}")]
@@ -134,7 +136,7 @@ namespace Icosoft.Models
         public int idDetailImageQuotation { get; set; }
 
         public int idImagenQuotation { get; set; }
-        public ImagenQuotation ImagenQuotations { get; set; }
-    }
+        public ImagenQuotation ImagenQuotations { get; set; }    }
 
+    
 }
