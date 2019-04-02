@@ -45,7 +45,6 @@ namespace Icosoft.Models
     {
         [Key]
         public int idImagenQuotation { get; set; }
-
         public string ImagenQuotations { get; set; }
         public ICollection<DetailImageQuotation> DetailImageQuotation { get; set; }
 
