@@ -23,13 +23,13 @@ namespace Icosoft.Models
 
         public System.Data.Entity.DbSet<Icosoft.Models.Supplier> Suppliers { get; set; }
 
-        public System.Data.Entity.DbSet<Icosoft.Models.Publication> Publications { get; set; }
-
         public System.Data.Entity.DbSet<Icosoft.Models.UserType> UserTypes { get; set; }
+
+        public System.Data.Entity.DbSet<Icosoft.Models.DocumentType> DocumentTypes { get; set; }
 
         public System.Data.Entity.DbSet<Icosoft.Models.Quotation> Quotations { get; set; }
 
-        public System.Data.Entity.DbSet<Icosoft.Models.DocumentType> DocumentTypes { get; set; }
+        public System.Data.Entity.DbSet<Icosoft.Models.Publication> Publications { get; set; }
 
         public System.Data.Entity.DbSet<Icosoft.Models.Detail> Details { get; set; }
 

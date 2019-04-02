@@ -15,7 +15,7 @@ namespace Icosoft.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Kartun es una empresa que cuenta con un equipo de sólidos profesionales, con amplios conocimientos técnicos en arquitectura de interiores. Somos capaces de dar respuesta a tus más exigentes necesidades e inquietudes, en la rehabilitación y decoración de tu vivienda, oficina o local";
 
             return View();
         }
