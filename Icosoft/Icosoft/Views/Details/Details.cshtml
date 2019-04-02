@@ -1,0 +1,82 @@
+﻿@model Icosoft.Models.Detail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Depth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Depth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeasureHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeasureHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeasureWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeasureWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepthMeasurement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepthMeasurement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionUser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idDetail }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -64,6 +64,16 @@ namespace Icosoft.Models
 
     public class RegisterViewModel
     {
+        [StringLength(40, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 3)]
+        [Display(Name = "Nombre Completo")]
+        public string Name { get; set; }
+        [StringLength(13)]
+        [Display(Name = "Numero de Documento")]
+        public string Document { get; set; }
+        [StringLength(45)]
+        [Display(Name = "Direccion")]
+        public string Direction { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
@@ -79,6 +89,13 @@ namespace Icosoft.Models
         [Display(Name = "Confirmar contraseña")]
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
+        public int IDDocumentType { get; set; }
+        public virtual DocumentType DocumentType { get; set; }
+
+        public int IDUserType { get; set; }
+        public virtual UserType UserType { get; set; }
+        public int IdCity { get; set; }
+        public virtual City City { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -1,0 +1,42 @@
+﻿@model Icosoft.Models.Supplie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedidaTipo.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedidaTipo.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.SuplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.SuplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplieName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplieName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idSupplie }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

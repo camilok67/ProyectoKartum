@@ -139,6 +139,8 @@ namespace Icosoft.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            var db = new IcosoftContext();
+            ViewBag.idDocumentType = new SelectList(db.DocumentTypes, "IDDocumentType", "DocumentTypeName");
             return View();
         }
 
@@ -151,7 +153,7 @@ namespace Icosoft.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, Direction = model.Direction, Document = model.Document };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -1,0 +1,90 @@
+﻿@model Icosoft.Models.Quotation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quotation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCompleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCompleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeQuotation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeQuotation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.incidentals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incidentals)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalLabor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalLabor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalProduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalProduction)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idQuotation }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
