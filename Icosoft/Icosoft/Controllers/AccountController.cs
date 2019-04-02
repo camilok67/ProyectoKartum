@@ -153,7 +153,7 @@ namespace Icosoft.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, Direction = model.Direction, Document = model.Document };
+                var user = new ApplicationUser { UserName = model.Name, Email = model.Email, Name = model.Name, Direction = model.Direction, Document = model.Document };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

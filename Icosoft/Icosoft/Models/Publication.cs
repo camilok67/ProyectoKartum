@@ -39,13 +39,10 @@ namespace Icosoft.Models
         public virtual ICollection<PublicationImage> PublicationImages2 { get; set; }
 
         //Relacion entre Tipo. Publicacion y publicaciones
+
         public virtual TypePublication TypePublications { get; set; }
 
-        //Relacion entre imagenes y publicaciones
-        
-
-        //Relacion entre intermedia Tipo. Medidas y publicaciones
-        public virtual MediMeasurementsPublication MediMeasurementsPublications { get; set; }
+        public virtual ICollection<Detail> Details { get; set; }
     }
 
     public class TypePublication
@@ -56,33 +53,11 @@ namespace Icosoft.Models
 
         //Relacion entre Tipo. Publicacion y publicaciones
         public string TypePublications { get; set; }
-        public ICollection<Publication> idPublications { get; set; }
+
+
+        public ICollection<Publication> Publications { get; set; }
 
     }
-
-    public class Measure
-    {
-        [Key]
-        public int idMeasure { get; set; }
-
-        [Display(Name = "Medida Altura")]
-        public string MeasureHeight { get; set; }
-
-        [Display(Name = "Medida Ancho")]
-        public string MeasureWidth { get; set; }
-
-        [Display(Name = "Medida Profundidad")]
-        public string DepthMeasurement { get; set; }
-
-        [Display(Name = "Descripción")]
-        public string Description { get; set; }
-
-        //Relacion entre intermedia Tipo. Medidas y medidas
-        public virtual MediMeasurementsPublication MediMeasurementsPublications { get; set; }
-    }
-
-
-
 
 
     //Tabla entre intermedia imagenes  y publicaciones
@@ -92,31 +67,10 @@ namespace Icosoft.Models
         public int idPublicationImage { get; set; }
 
         public int IDImage { get; set; }
-        public virtual Image Image { get; set; }
-        public int idPublication { get; set; }
-        public virtual Publication Publication { get; set; }
-
-
-
-
-    }
-
-
-    //Tabla entre intermedia tipo. medidas  y publicaciones
-    public class MediMeasurementsPublication
-    {
-        [Key]
-        public int idMediMeasurementsPublication { get; set; }
+        public  Image Image { get; set; }
 
         public int idPublication { get; set; }
-
-        public int idMeasure { get; set; }
-
-
-        public ICollection<Publication>  Publications { get; set; }
-
-        public ICollection<Measure> Measures { get; set; }
-
+        public  Publication Publication { get; set; }
     }
 
     public class Image

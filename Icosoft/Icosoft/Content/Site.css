@@ -22,3 +22,41 @@ select,
 textarea {
     max-width: 280px;
 }
+#titulo{
+   
+    text-align: center;
+}
+.mv {
+    margin: 1em;
+    overflow-x: hidden;
+    padding: 2em 2em !important;
+    background: rgb(117, 110, 110);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 0 #e5e5e5;
+    margin: 0 0 2em 0;
+    padding: 3em;
+    color:aliceblue;
+}
+
+.cotizacion {
+    padding: 4em 0;
+    width: 45em;
+    margin: 0 auto;
+    max-width: calc(100% - 5em);
+    width: 60em;
+}
+.registro {
+    padding: 2em 2em !important;
+    background: rgb(117, 110, 110);
+    border-radius: 6px;
+    margin: 0 0 2em 0;
+    height: 100%;
+    width: 60%;
+    position: relative;
+    left: 20%;
+ 
+
+}
+body {
+    background-color: rgb(229, 229, 229);
+}
