@@ -15,8 +15,8 @@ namespace Icosoft.Class
 
             if (file != null)
             {
-                pic = path.GetFileName(file.FileName);
-                path = path.Combine(HttpContext.Current.Server.MapPath(folder), pic);
+                pic = Path.GetFileName(file.FileName);
+                path = Path.Combine(HttpContext.Current.Server.MapPath(folder), pic);
                 file.SaveAs(path);
                 using (MemoryStream ms = new MemoryStream())
                 {

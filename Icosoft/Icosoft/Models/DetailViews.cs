@@ -8,7 +8,8 @@ namespace Icosoft.Models
 {
     public class DetailViews
     {
-        
+            public int idDetail { get; set; }
+
             [Display(Name = "Altura")]
             [Required(ErrorMessage = "Debe Ingresar la {0}")]
             public double Height { get; set; }
@@ -41,7 +42,19 @@ namespace Icosoft.Models
             public string DescriptionUser { get; set; }
 
 
+            [Display(Name = "Medida Altura")]
+            [Required(ErrorMessage = "Debe Seleccionar la {0}")]
+            public string MeasureHeight { get; set; }
 
-        
+            [Display(Name = "Medida Ancho")]
+            [Required(ErrorMessage = "Debe Seleccionar la {0}")]
+            public string MeasureWidth { get; set; }
+
+            [Display(Name = "Medida Profundidad")]
+            [Required(ErrorMessage = "Debe Seleccionar la {0}")]
+            public string DepthMeasurement { get; set; }
+
+
+
     }
 }

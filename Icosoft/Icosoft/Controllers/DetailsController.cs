@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Icosoft.Class;
 using Icosoft.Models;
 
 namespace Icosoft.Controllers
@@ -47,16 +48,47 @@ namespace Icosoft.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DetailViews detail)
+        public ActionResult Create(DetailViews view)
         {
             if (ModelState.IsValid)
             {
+                var pic = string.Empty;
+                var folder = "~/Content/Image";
+
+                if (view.ImageFile != null)
+                {
+                    pic = FileHelper.uploadphoto(view.ImageFile, folder);
+                    pic = string.Format("{0}/{1}", folder, pic);
+
+                }
+
+                var detail = ToDetail(view);
+                detail.Image = pic;
+
                 db.Details.Add(detail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(detail);
+            return View(view);
+        }
+
+        private Detail ToDetail(DetailViews view)
+        {
+            return new Detail
+            {
+                idDetail = view.idDetail,
+                Height = view.Height,
+                MeasureHeight = view.MeasureHeight,
+                Width = view.Width,
+                MeasureWidth = view.MeasureWidth,
+                Depth = view.Depth,
+                DepthMeasurement = view.DepthMeasurement,
+                Image = view.Image,
+                DescriptionAdmin = view.DescriptionAdmin,
+                DescriptionUser = view.DescriptionUser
+
+            };
         }
 
         // GET: Details/Edit/5
@@ -72,7 +104,25 @@ namespace Icosoft.Controllers
                 return HttpNotFound();
             }
 
-            return View(detail);
+            return View(Toview(detail));
+        }
+
+        private DetailViews Toview(Detail detail)
+        {
+            return new DetailViews
+            {
+                idDetail = detail.idDetail,
+                Height = detail.Height,
+                MeasureHeight = detail.MeasureHeight,
+                Width = detail.Width,
+                MeasureWidth = detail.MeasureWidth,
+                Depth = detail.Depth,
+                DepthMeasurement = detail.DepthMeasurement,
+                Image = detail.Image,
+                DescriptionAdmin = detail.DescriptionAdmin,
+                DescriptionUser = detail.DescriptionUser
+
+            };
         }
 
         // POST: Details/Edit/5
@@ -80,16 +130,29 @@ namespace Icosoft.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idDetail,Height,Width,Depth,Image,DescriptionAdmin,DescriptionUser")] Detail detail)
+        public ActionResult Edit(DetailViews view)
         {
             if (ModelState.IsValid)
             {
+                var pic = view.Image;
+                var folder = "~/Content/Image";
+
+                if (view.ImageFile != null)
+                {
+                    pic = FileHelper.uploadphoto(view.ImageFile, folder);
+                    pic = string.Format("{0}/{1}", folder, pic);
+
+                }
+
+                var detail = ToDetail(view);
+                detail.Image = pic;
+
                 db.Entry(detail).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(detail);
+            return View(view);
         }
 
         // GET: Details/Delete/5

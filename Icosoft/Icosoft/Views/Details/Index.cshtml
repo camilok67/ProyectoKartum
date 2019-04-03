@@ -3,22 +3,30 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a class="btn btn-success" href="/Details/Create"> Crear nueva cotización <samp class="glyphicon glyphicon-plus"> </samp> </a>
 </p>
-<table class="table">
+<table class="table table-bordered table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Height)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.MeasureHeight)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Width)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.MeasureWidth)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Depth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Image)
@@ -29,7 +37,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DescriptionUser)
         </th>
-        <th></th>
+        <th  class="tabla">
+            Opciones
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -38,13 +48,25 @@
             @Html.DisplayFor(modelItem => item.Height)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.MeasureHeight)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeasureWidth)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Depth)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
+            @Html.DisplayFor(modelItem => item.DepthMeasurement)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Image))
+            {
+                <img src="@Url.Content(item.Image)" alt="Image" style="width:100px; height:100px; max-width:100%; height:auto" />
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DescriptionAdmin)
@@ -52,10 +74,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.DescriptionUser)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idDetail }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idDetail }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idDetail })
+        <td class="tabla">
+            <a class="btn btn-warning" href="/Details/Edit/@item.idDetail">Editar <samp class="glyphicon glyphicon-edit"> </samp> </a>
+            <a class="btn btn-info" href="/Details/Details/@item.idDetail">Info <samp class="glyphicon glyphicon-exclamation-sign"> </samp> </a>
+            <a class="btn btn-danger" href="/Details/Delete/@item.idDetail">Eliminar <samp class="glyphicon glyphicon-trash"> </samp> </a>
         </td>
     </tr>
 }
