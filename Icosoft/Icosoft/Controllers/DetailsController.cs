@@ -11,7 +11,6 @@ using Icosoft.Models;
 
 namespace Icosoft.Controllers
 {
-    //Esto valida que el usuario tenga que log se hace a nivel de controlado o a nivel de acción  [Authorize] 
     public class DetailsController : Controller
     {
         private IcosoftContext db = new IcosoftContext();
@@ -22,7 +21,7 @@ namespace Icosoft.Controllers
             return View(db.Details.ToList());
         }
 
-
+        // GET: Details/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)

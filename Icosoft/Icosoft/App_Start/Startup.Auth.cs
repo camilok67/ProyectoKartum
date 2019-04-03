@@ -54,9 +54,9 @@ namespace Icosoft
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            app.UseFacebookAuthentication(
-               appId: "2391326030887302",
-               appSecret: "d224bb46c6c8f3f5173b0fdf6fbaf1a5");
+            //app.UseFacebookAuthentication(
+            //   appId: "",
+            //   appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
